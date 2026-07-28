@@ -8,7 +8,7 @@ Anchor program underlying Privacy Pump Personal Vault and Private Multisig autho
 
 ## Purpose
 
-Publishes the reviewed on-chain boundary shared by one-member Personal Vaults and multi-member Private Multisig.
+Publishes the reviewed on-chain boundary shared by the one-member Personal Vault product and multi-member Private Multisig.
 
 ## Scope
 
