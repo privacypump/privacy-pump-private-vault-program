@@ -1,0 +1,1368 @@
+{
+  "address": "DQEq5ftpcvjdg656PWxayafozUX95jCmZ9zEn82qDmfx",
+  "metadata": {
+    "name": "privacy_pump_private_vault",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "create_privacy_pump_private_proposal",
+      "discriminator": [206, 131, 182, 74, 46, 207, 175, 27],
+      "accounts": [
+        {
+          "name": "relayer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116, 45, 99, 111, 110, 102, 105, 103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "reimbursement_wallet",
+          "writable": true
+        },
+        {
+          "name": "proposal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 112, 114,
+                  111, 112, 111, 115, 97, 108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vault"
+              },
+              {
+                "kind": "account",
+                "path": "vault.proposal_count",
+                "account": "PrivacyPumpPrivateVault"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "CreatePrivacyPumpPrivateProposalArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_privacy_pump_private_vault",
+      "discriminator": [57, 24, 189, 99, 79, 201, 231, 186],
+      "accounts": [
+        {
+          "name": "factory",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116, 45, 99, 111, 110, 102, 105, 103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "factory"
+              },
+              {
+                "kind": "arg",
+                "path": "args.vault_nonce"
+              }
+            ]
+          }
+        },
+        {
+          "name": "treasury",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 116, 114,
+                  101, 97, 115, 117, 114, 121
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vault"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "CreatePrivacyPumpPrivateVaultArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "execute_privacy_pump_private_profile_proposal",
+      "discriminator": [81, 230, 18, 153, 56, 239, 198, 205],
+      "accounts": [
+        {
+          "name": "relayer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116, 45, 99, 111, 110, 102, 105, 103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault"
+        },
+        {
+          "name": "proposal",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "ExecutePrivacyPumpPrivateProfileProposalArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "execute_privacy_pump_private_proposal",
+      "discriminator": [27, 227, 188, 105, 97, 180, 169, 1],
+      "accounts": [
+        {
+          "name": "relayer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116, 45, 99, 111, 110, 102, 105, 103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault"
+        },
+        {
+          "name": "proposal",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "recipient",
+          "writable": true
+        },
+        {
+          "name": "reimbursement_wallet",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "ExecutePrivacyPumpPrivateProposalArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "execute_privacy_pump_private_protected_withdrawal",
+      "discriminator": [219, 69, 210, 254, 138, 108, 165, 32],
+      "accounts": [
+        {
+          "name": "relayer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116, 45, 99, 111, 110, 102, 105, 103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault"
+        },
+        {
+          "name": "proposal",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 116, 114,
+                  101, 97, 115, 117, 114, 121
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vault"
+              }
+            ]
+          }
+        },
+        {
+          "name": "reimbursement_wallet",
+          "writable": true
+        },
+        {
+          "name": "zk_pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 114, 105, 118, 97, 116, 101, 45, 112, 111, 111, 108
+                ]
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "zk_pool_program"
+            }
+          }
+        },
+        {
+          "name": "pool_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 114, 105, 118, 97, 116, 101, 45, 112, 111, 111, 108, 45,
+                  118, 97, 117, 108, 116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "zk_pool"
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "zk_pool_program"
+            }
+          }
+        },
+        {
+          "name": "zk_pool_program"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "ExecutePrivacyPumpPrivateProtectedWithdrawalArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "execute_privacy_pump_private_signer_set_change",
+      "discriminator": [138, 136, 106, 23, 196, 20, 92, 159],
+      "accounts": [
+        {
+          "name": "relayer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116, 45, 99, 111, 110, 102, 105, 103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "proposal",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "ExecutePrivacyPumpPrivateSignerSetChangeArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "execute_privacy_pump_private_threshold_proposal",
+      "discriminator": [192, 139, 24, 170, 115, 97, 17, 135],
+      "accounts": [
+        {
+          "name": "relayer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116, 45, 99, 111, 110, 102, 105, 103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "proposal",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "ExecutePrivacyPumpPrivateThresholdProposalArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "initialize_privacy_pump_private_vault_config",
+      "discriminator": [141, 114, 138, 213, 195, 99, 15, 31],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116, 45, 99, 111, 110, 102, 105, 103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "InitializePrivacyPumpPrivateVaultConfigArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "record_privacy_pump_private_action",
+      "discriminator": [132, 137, 75, 41, 106, 22, 109, 216],
+      "accounts": [
+        {
+          "name": "relayer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 118, 97,
+                  117, 108, 116, 45, 99, 111, 110, 102, 105, 103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault"
+        },
+        {
+          "name": "proposal",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "reimbursement_wallet",
+          "writable": true
+        },
+        {
+          "name": "nullifier",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112, 112, 45, 112, 114, 105, 118, 97, 116, 101, 45, 110, 117,
+                  108, 108, 105, 102, 105, 101, 114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vault"
+              },
+              {
+                "kind": "account",
+                "path": "proposal"
+              },
+              {
+                "kind": "account",
+                "path": "arcium_receipt"
+              }
+            ]
+          }
+        },
+        {
+          "name": "arcium_receipt"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "RecordPrivacyPumpPrivateActionArgs"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "PrivacyPumpPrivateNullifier",
+      "discriminator": [245, 61, 79, 208, 28, 121, 20, 83]
+    },
+    {
+      "name": "PrivacyPumpPrivateProposal",
+      "discriminator": [33, 120, 159, 74, 145, 205, 139, 196]
+    },
+    {
+      "name": "PrivacyPumpPrivateVault",
+      "discriminator": [52, 202, 14, 116, 233, 235, 108, 82]
+    },
+    {
+      "name": "PrivacyPumpPrivateVaultConfig",
+      "discriminator": [185, 172, 214, 51, 169, 10, 205, 203]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidThreshold",
+      "msg": "The requested threshold is invalid for the private signer set."
+    },
+    {
+      "code": 6001,
+      "name": "InvalidSignerCommitmentRoot",
+      "msg": "The signer commitment root is required."
+    },
+    {
+      "code": 6002,
+      "name": "InvalidFactory",
+      "msg": "The caller is not the configured PrivacyPump Factory."
+    },
+    {
+      "code": 6003,
+      "name": "InvalidRelayer",
+      "msg": "The caller is not the configured PrivacyPump Relayer."
+    },
+    {
+      "code": 6004,
+      "name": "ProposalNotPending",
+      "msg": "The proposal is not pending."
+    },
+    {
+      "code": 6005,
+      "name": "ProposalNotApproved",
+      "msg": "The proposal is not approved for execution."
+    },
+    {
+      "code": 6006,
+      "name": "DuplicatePrivateAction",
+      "msg": "This private signer action was already recorded."
+    },
+    {
+      "code": 6007,
+      "name": "InvalidPrivateNullifier",
+      "msg": "The private nullifier is required."
+    },
+    {
+      "code": 6008,
+      "name": "InvalidActionDomain",
+      "msg": "The private authorization action domain is invalid."
+    },
+    {
+      "code": 6009,
+      "name": "InvalidArciumVerifier",
+      "msg": "The Arcium verifier account is not configured for this vault."
+    },
+    {
+      "code": 6010,
+      "name": "ArciumVerificationUnavailable",
+      "msg": "Arcium private membership and nullifier verification is not available."
+    },
+    {
+      "code": 6011,
+      "name": "InvalidArciumReceipt",
+      "msg": "The PrivacyPumpArciumVerifier receipt is invalid."
+    },
+    {
+      "code": 6012,
+      "name": "InvalidArciumReceiptOwner",
+      "msg": "The PrivacyPumpArciumVerifier receipt is owned by the wrong program."
+    },
+    {
+      "code": 6013,
+      "name": "ArciumReceiptNotVerified",
+      "msg": "The PrivacyPumpArciumVerifier receipt is not verified."
+    },
+    {
+      "code": 6014,
+      "name": "ArciumReceiptAlreadyConsumed",
+      "msg": "The PrivacyPumpArciumVerifier receipt is already consumed."
+    },
+    {
+      "code": 6015,
+      "name": "ArciumReceiptVaultMismatch",
+      "msg": "The PrivacyPumpArciumVerifier receipt vault binding is invalid."
+    },
+    {
+      "code": 6016,
+      "name": "ArciumReceiptProposalMismatch",
+      "msg": "The PrivacyPumpArciumVerifier receipt proposal binding is invalid."
+    },
+    {
+      "code": 6017,
+      "name": "ArciumReceiptSignerRootMismatch",
+      "msg": "The PrivacyPumpArciumVerifier receipt signer root binding is invalid."
+    },
+    {
+      "code": 6018,
+      "name": "ArciumReceiptSignerSetVersionMismatch",
+      "msg": "The PrivacyPumpArciumVerifier receipt signer set version binding is invalid."
+    },
+    {
+      "code": 6019,
+      "name": "ArciumReceiptActionDomainMismatch",
+      "msg": "The PrivacyPumpArciumVerifier receipt action domain binding is invalid."
+    },
+    {
+      "code": 6020,
+      "name": "ArciumReceiptNullifierMismatch",
+      "msg": "The PrivacyPumpArciumVerifier receipt nullifier binding is invalid."
+    },
+    {
+      "code": 6021,
+      "name": "ArciumReceiptPayloadMismatch",
+      "msg": "The PrivacyPumpArciumVerifier receipt payload binding is invalid."
+    },
+    {
+      "code": 6022,
+      "name": "InvalidExecutionPayload",
+      "msg": "The private proposal execution payload is invalid."
+    },
+    {
+      "code": 6023,
+      "name": "InvalidTreasury",
+      "msg": "The private vault treasury account is invalid."
+    },
+    {
+      "code": 6024,
+      "name": "InvalidRecipient",
+      "msg": "The private vault withdrawal recipient is invalid."
+    },
+    {
+      "code": 6025,
+      "name": "TreasuryInsufficientFunds",
+      "msg": "The private vault treasury has insufficient lamports."
+    },
+    {
+      "code": 6026,
+      "name": "TreasuryRentReserve",
+      "msg": "The private vault treasury rent reserve cannot be drained."
+    },
+    {
+      "code": 6027,
+      "name": "LamportMathOverflow",
+      "msg": "The private vault lamport transfer overflowed."
+    },
+    {
+      "code": 6028,
+      "name": "InvalidReimbursementWallet",
+      "msg": "The private vault relayer reimbursement wallet is invalid."
+    },
+    {
+      "code": 6029,
+      "name": "RelayerReimbursementExceedsCap",
+      "msg": "The private action fee exceeded the safety cap."
+    },
+    {
+      "code": 6030,
+      "name": "WithdrawalBelowMinimumRecipientReceive",
+      "msg": "The withdrawal is below the proposal recipient minimum."
+    },
+    {
+      "code": 6031,
+      "name": "LegacyProposalMissingFeeProtection",
+      "msg": "This proposal was created before fee protection was added. Create a new proposal."
+    }
+  ],
+  "types": [
+    {
+      "name": "CreatePrivacyPumpPrivateProposalArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "proposal_type",
+            "type": {
+              "defined": {
+                "name": "PrivacyPumpPrivateProposalType"
+              }
+            }
+          },
+          {
+            "name": "payload_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "max_relayer_reimbursement_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "actual_relayer_reimbursement_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "minimum_recipient_receive_lamports",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreatePrivacyPumpPrivateVaultArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "vault_nonce",
+            "type": "u64"
+          },
+          {
+            "name": "threshold",
+            "type": "u16"
+          },
+          {
+            "name": "member_count",
+            "type": "u16"
+          },
+          {
+            "name": "signer_commitment_root",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "signer_set_version",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExecutePrivacyPumpPrivateProfileProposalArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authorization_payload_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExecutePrivacyPumpPrivateProposalArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "recipient",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "authorization_payload_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "actual_relayer_reimbursement_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "minimum_recipient_receive_lamports",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExecutePrivacyPumpPrivateProtectedWithdrawalArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "commitment",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "amount_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "authorization_payload_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "actual_relayer_reimbursement_lamports",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExecutePrivacyPumpPrivateSignerSetChangeArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "action_kind",
+            "type": "u8"
+          },
+          {
+            "name": "target_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "proposal_index",
+            "type": "u64"
+          },
+          {
+            "name": "creator_signer_index",
+            "type": "u16"
+          },
+          {
+            "name": "package_id",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "package_version",
+            "type": "u16"
+          },
+          {
+            "name": "metadata_digest",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "current_member_count",
+            "type": "u16"
+          },
+          {
+            "name": "new_member_count",
+            "type": "u16"
+          },
+          {
+            "name": "current_threshold",
+            "type": "u16"
+          },
+          {
+            "name": "new_threshold",
+            "type": "u16"
+          },
+          {
+            "name": "current_signer_set_version",
+            "type": "u32"
+          },
+          {
+            "name": "new_signer_set_version",
+            "type": "u32"
+          },
+          {
+            "name": "current_signer_commitment_root",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "new_signer_commitment_root",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "authorization_payload_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExecutePrivacyPumpPrivateThresholdProposalArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "current_threshold",
+            "type": "u16"
+          },
+          {
+            "name": "new_threshold",
+            "type": "u16"
+          },
+          {
+            "name": "authorization_payload_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "InitializePrivacyPumpPrivateVaultConfigArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "factory",
+            "type": "pubkey"
+          },
+          {
+            "name": "relayer",
+            "type": "pubkey"
+          },
+          {
+            "name": "reimbursement_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "arcium_verifier",
+            "type": "pubkey"
+          },
+          {
+            "name": "min_treasury_rent_reserve_lamports",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivacyPumpPrivateExecutionResult",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "NotExecuted"
+          },
+          {
+            "name": "Succeeded"
+          },
+          {
+            "name": "Failed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivacyPumpPrivateNullifier",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "proposal",
+            "type": "pubkey"
+          },
+          {
+            "name": "nullifier_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "action_domain",
+            "type": "u8"
+          },
+          {
+            "name": "signer_set_version",
+            "type": "u32"
+          },
+          {
+            "name": "recorded_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivacyPumpPrivateProposal",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "proposal_id",
+            "type": "u64"
+          },
+          {
+            "name": "proposal_type",
+            "type": {
+              "defined": {
+                "name": "PrivacyPumpPrivateProposalType"
+              }
+            }
+          },
+          {
+            "name": "payload_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "threshold_snapshot",
+            "type": "u16"
+          },
+          {
+            "name": "member_count_snapshot",
+            "type": "u16"
+          },
+          {
+            "name": "signer_commitment_root_snapshot",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "signer_set_version_snapshot",
+            "type": "u32"
+          },
+          {
+            "name": "approval_count",
+            "type": "u16"
+          },
+          {
+            "name": "rejection_count",
+            "type": "u16"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "PrivacyPumpPrivateProposalStatus"
+              }
+            }
+          },
+          {
+            "name": "execution_result",
+            "type": {
+              "defined": {
+                "name": "PrivacyPumpPrivateExecutionResult"
+              }
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "executed_at",
+            "type": "i64"
+          },
+          {
+            "name": "max_relayer_reimbursement_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "minimum_recipient_receive_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "reimbursement_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "fee_protection_enabled",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivacyPumpPrivateProposalStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pending"
+          },
+          {
+            "name": "Approved"
+          },
+          {
+            "name": "Rejected"
+          },
+          {
+            "name": "Executed"
+          },
+          {
+            "name": "Expired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivacyPumpPrivateProposalType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "TransferSol"
+          },
+          {
+            "name": "ProtectedWithdrawal"
+          },
+          {
+            "name": "UpdateSettings"
+          },
+          {
+            "name": "SignerSetChange"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivacyPumpPrivateVault",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "treasury",
+            "type": "pubkey"
+          },
+          {
+            "name": "threshold",
+            "type": "u16"
+          },
+          {
+            "name": "member_count",
+            "type": "u16"
+          },
+          {
+            "name": "signer_commitment_root",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "signer_set_version",
+            "type": "u32"
+          },
+          {
+            "name": "proposal_count",
+            "type": "u64"
+          },
+          {
+            "name": "arcium_verifier",
+            "type": "pubkey"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "PrivacyPumpPrivateVaultStatus"
+              }
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "treasury_bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivacyPumpPrivateVaultConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "factory",
+            "type": "pubkey"
+          },
+          {
+            "name": "relayer",
+            "type": "pubkey"
+          },
+          {
+            "name": "arcium_verifier",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PrivacyPumpPrivateVaultStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Active"
+          },
+          {
+            "name": "Frozen"
+          },
+          {
+            "name": "Closed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RecordPrivacyPumpPrivateActionArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "nullifier_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "action_domain",
+            "type": "u8"
+          },
+          {
+            "name": "authorization_payload_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "max_relayer_reimbursement_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "actual_relayer_reimbursement_lamports",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ]
+}

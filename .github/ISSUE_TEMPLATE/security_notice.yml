@@ -1,0 +1,14 @@
+name: Security process question
+description: Ask about disclosure scope without reporting a vulnerability publicly.
+title: "[Security process] "
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not disclose a vulnerability here. Follow SECURITY.md and use private vulnerability reporting when available."
+  - type: textarea
+    id: question
+    attributes:
+      label: Process question
+    validations:
+      required: true
