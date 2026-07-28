@@ -1,0 +1,22 @@
+name: Bug report
+description: Report reproducible public-repository behavior without private data.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include secrets, private wallet relationships, production logs, or vulnerability details."
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened using deterministic fixtures or local development?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide minimal local steps with no real keys or production endpoints.
+    validations:
+      required: true

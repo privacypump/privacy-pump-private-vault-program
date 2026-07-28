@@ -1,0 +1,16 @@
+{
+  "name": "privacy-pump-private-vault-program",
+  "description": "Anchor program underlying Privacy Pump Personal Vault and Private Multisig authorization.",
+  "maturity": "Experimental devnet program",
+  "network": "Devnet and local validator",
+  "topics": [
+    "privacy-pump",
+    "solana",
+    "anchor",
+    "rust",
+    "private-multisig",
+    "personal-vault",
+    "defi"
+  ],
+  "visibility": "public-after-verification"
+}
